@@ -1,6 +1,6 @@
 testing jwt encoding
 testDefaultEncodeDecode
-	|encodedString key payload encodedJWT decodedJWT |
+	| encodedString key payload encodedJWT decodedJWT |
 	key := 'secret'.
 	payload := Dictionary new add: ('some' -> 'payload'); yourself.
 	

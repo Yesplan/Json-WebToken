@@ -1,7 +1,7 @@
 testing jwt encoding
 testEncodingDecodingNonASCII
 
-	|  key token1 token2 token3 token4 token5 |
+	| key token1 token2 token3 token4 token5 |
 
 	key := 'secret'.
 
