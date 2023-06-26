@@ -14,26 +14,18 @@ baseline: spec
 			
 			spec
 				package: 'Json-WebToken'
-				with: [ spec requires: #('Cryptography' 'Seaside3') ].
+				with: [ spec requires: #('Seaside3') ].
 				
 			spec 
 				group: 'default' with: #('Json-WebToken' 'Seaside3') ].
-			
-	spec 
-		for: #pharo
-		do: [ 
-  			spec
-				baseline: 'Cryptography'
-				with:[ 
-					spec
-  						repository: 'github://pharo-contributions/Cryptography/source' ] ].
 		
 	spec
 		for: #gemstone
 		do: [  
 			spec
 				baseline: 'Cryptography'
-   				with: [ spec repository: 'github://GsDevKit/Cryptography:master/repository' ].
+   				with: [ 
+					spec repository: 'github://GsDevKit/Cryptography:master/repository' ].
 			spec
 				baseline: 'PharoCompatibility'
       			with: [ 
@@ -41,7 +33,9 @@ baseline: spec
 						repository: 'github://GsDevKit/PharoCompatibility:master/repository';
       					loads: 'Core' ].
 				
-			spec 
-				group: 'default' with: #('PharoCompatibility')
-			
-			 ]
+			spec
+				package: 'Json-WebToken'
+				with: [ spec requires: #('Cryptography' 'Seaside3') ].
+				
+			spec
+			group: 'default' with: #('PharoCompatibility') ]
