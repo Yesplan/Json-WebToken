@@ -1,4 +1,4 @@
 private
 verifySignature: signatureString forMessage: messageString
-	signatureString = (self signatureOf: messageString)
+	signatureString asByteArray = (self signatureOf: messageString) asByteArray
 		ifFalse:[self error: 'Signature verification failed']
