@@ -9,8 +9,8 @@ fromEncodedString: aString
 	headerString := decoder decode: (self base64UrlDecoded: segments first).
 	payloadString := decoder decode: (self base64UrlDecoded: segments second).
 	[ 
-	headerfields := JSJsonParser parse: headerString.
-	payload := JSJsonParser parse: payloadString ]
+	headerfields := WAJsonParser parse: headerString.
+	payload := WAJsonParser parse: payloadString ]
 		on: self jsonSyntaxErrorException
 		do: [ :e | self error: 'Incorrect string encoding or invalid json content' ].
 

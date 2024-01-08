@@ -9,7 +9,7 @@ testEncodingDecodingNonASCII
 	  contains a non-ASCII character:
 		'{ ""name"" : ""Ægir"" }' "
 	token1 := JWT new key: key; fromEncodedString: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAibmFtZSIgOiAiw4ZnaXIiIH0.YMQaox/praqN23QnH/RYPyPoRvEr/IDshYCjc3XvMWw'.
-	self assert: token1 payload = (JSJsonParser parse: '{ "name" : "Ægir" }').
+	self assert: token1 payload = (WAJsonParser parse: '{ "name" : "Ægir" }').
 
 	"Tests whether encoding and decoding works for a payload containing a non-ASCII character (note that the #encodedString for
 		these tokens may or may not be the same as that of token1, depending on how the payload object is converted to a string by #asJson):"
