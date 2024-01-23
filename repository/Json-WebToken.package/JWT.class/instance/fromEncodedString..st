@@ -11,7 +11,7 @@ fromEncodedString: aString
 	[ 
 	headerfields := WAJsonParser parse: headerString.
 	payload := WAJsonParser parse: payloadString ]
-		on: self jsonSyntaxErrorException
+		on: WAJsonSyntaxError
 		do: [ :e | self error: 'Incorrect string encoding or invalid json content' ].
 
 	segments size = 3 ifTrue: [ 
