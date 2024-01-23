@@ -26,17 +26,22 @@ baseline: spec
 	spec
 		for: #gemstone
 		do: [
-			spec
-				baseline: 'Cryptography'
-   				with: [
-					spec repository: 'github://GsDevKit/Cryptography:master/repository' ].
+			spec for: #(#WithoutSHA256) do:[
+				spec
+					baseline: 'Cryptography'
+  	 				with: [
+						spec repository: 'github://GsDevKit/Cryptography:master/repository' ].
+				spec
+					package: 'Json-WebToken'
+					with: [ spec requires: #('Cryptography') ] ].
+
 			spec
 				baseline: 'PharoCompatibility'
-      			with: [
+	      		with: [
 					spec
 						repository: 'github://GsDevKit/PharoCompatibility:master/repository';
-      					loads: 'Core' ].
+						loads: 'Core' ].
 
 			spec
 				package: 'Json-WebToken'
-				with: [ spec requires: #('Cryptography' 'PharoCompatibility') ] ]
+				with: [ spec requires: #('PharoCompatibility') ] ]
