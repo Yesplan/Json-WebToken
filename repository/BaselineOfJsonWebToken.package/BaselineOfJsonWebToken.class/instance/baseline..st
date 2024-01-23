@@ -35,13 +35,14 @@ baseline: spec
 					package: 'Json-WebToken'
 					with: [ spec requires: #('Cryptography') ] ].
 
-			spec
-				baseline: 'PharoCompatibility'
-	      		with: [
-					spec
-						repository: 'github://GsDevKit/PharoCompatibility:master/repository';
-						loads: 'Core' ].
+			spec for: #WithoutPharoCompat do: [
+				spec
+					baseline: 'PharoCompatibility'
+	 	     		with: [
+						spec
+							repository: 'github://GsDevKit/PharoCompatibility:master/repository';
+							loads: 'Core' ].
 
-			spec
-				package: 'Json-WebToken'
-				with: [ spec requires: #('PharoCompatibility') ] ]
+				spec
+					package: 'Json-WebToken'
+					with: [ spec requires: #('PharoCompatibility') ] ] ]
